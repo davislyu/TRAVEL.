@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./main.css";
 import img1 from "../Assets/img1.jpg";
 import img2 from "../Assets/img2.jpg";
@@ -10,10 +10,13 @@ import img7 from "../Assets/img7.jpg";
 import img8 from "../Assets/img8.jpg";
 import img9 from "../Assets/img9.jpg";
 import img10 from "../Assets/img10.jpg";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 //import icons
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { BsClipboardCheck } from "react-icons/bs";
+
 const Data = [
   {
     id: 1,
@@ -114,16 +117,21 @@ const Data = [
 ];
 
 const Main = () => {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
   return (
     <section className="main container section">
       <div className="secTitle">
-        <h3 className="title">Most visited destinations</h3>
+        <h3 data-aos="fade-right" className="title">
+          Most visited destinations
+        </h3>
       </div>
       <div className="secContent grid">
         {Data.map(
           ({ id, imgSrc, destTitle, location, grade, fees, description }) => {
             return (
-              <div key={id} className="singleDestination">
+              <div key={id} data-aos="fade-up" className="singleDestination">
                 <div className="imageDiv">
                   <img src={imgSrc} alt={destTitle} />
                 </div>
