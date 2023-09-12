@@ -39,8 +39,10 @@
   z-index: -1;
 }
 .main .secContent {
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1.5rem;
+  justify-content: center;
 }
 .main .secContent .singleDestination {
   height: 100%;
@@ -123,6 +125,7 @@
   font-size: 13.5px;
   color: var(--textColor);
   font-weight: 500;
+  max-height: 70px;
 }
 .main .secContent .singleDestination .cardInfo .btn {
   margin-top: 1rem;
