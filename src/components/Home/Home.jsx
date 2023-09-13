@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./home.css";
 import video from "../Assets/video.mp4";
 import { GrLocation } from "react-icons/gr";
@@ -13,6 +13,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 
 const Home = () => {
+  const [price, setPrice] = useState(1000);
   useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);
@@ -53,10 +54,15 @@ const Home = () => {
           <div className="priceInput">
             <div className="label_total flex">
               <label htmlFor="price">Max price:</label>
-              <h3 className="total">$5000</h3>
+              <h3 className="total">${price}</h3>
             </div>
             <div className="input flex">
-              <input type="range" max="5000" min="1000" />
+              <input
+                onChange={(x) => setPrice(x.target.value)}
+                type="range"
+                max="5000"
+                min="1000"
+              />
             </div>
           </div>
           <div className="searchOptions flex">

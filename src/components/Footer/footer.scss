@@ -23,187 +23,275 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
 
-.videoDiv {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-
-  video {
-    height: 100%;
-    object-fit: cover;
-  }
-
-  &::after {
-    content: "";
+  .videoDiv {
     position: absolute;
-    background: rgba(
-      10,
-      84,
-      84,
-      0.307
-    ); /* I assume you wanted some kind of overlay, so I corrected the rgba values here */
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    mix-blend-mode: multiply;
-  }
-}
-
-.secContent {
-  position: relative; /* Add this to ensure the content is positioned relative to the footer */
-  z-index: 10; /* This ensures the content is placed above the video */
-  width: 100%;
-  height: max-content;
-  padding: 2rem initial;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin: auto;
-  row-gap: 2rem;
-
-  .contactDiv {
-    justify-content: space-between;
-    flex-direction: column;
-    gap: 1rem;
-
-    .text {
-      small {
-        font-size: 13px;
-        font-weight: 400;
-        color: var(--whiteColor);
-      }
-
-      h2 {
-        color: var(--whiteColor);
-        font-size: 1.8rem;
-      }
-    }
-    .inputDiv {
-      width: 100%;
-      gap: 1rem;
-      flex-direction: column;
-      input {
-        width: 100%;
-        padding: 0.5rem 0.6rem;
-        border-radius: 3rem;
-        border: 1px solid var(--whiteColor);
-        outline: none;
-        background: transparent;
-        color: var(--whiteColor);
-
-        &::placeholder {
-          color: var(--whiteColor);
-          opacity: 0.5;
-        }
-      }
-      .btn {
-        width: 100%;
-        justify-content: center;
-        color: var(--whiteColor);
-        font-weight: 500;
-        gap: 0.5rem;
-
-        .icon {
-          font-size: 18px;
-        }
-      }
-    }
-  }
-  .footerCard {
-    position: relative;
-    padding: 1rem 1rem 4rem;
-    gap: 2rem;
-    border-radius: 1rem;
-    background: var(--bodyColor);
+    height: 100%;
     width: 100%;
+
+    video {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      background: rgba(
+        10,
+        84,
+        84,
+        0.307
+      ); /* I assume you wanted some kind of overlay, so I corrected the rgba values here */
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      mix-blend-mode: multiply;
+    }
+  }
+
+  .secContent {
+    position: relative; /* Add this to ensure the content is positioned relative to the footer */
+    z-index: 10; /* This ensures the content is placed above the video */
+    width: 100%;
+    height: max-content;
+    padding: 2rem initial;
+    display: flex;
+    align-items: center;
     justify-content: center;
     flex-direction: column;
-    align-items: flex-start;
-    overflow: hidden;
+    margin: auto;
+    row-gap: 2rem;
 
-    .footerIntro {
-      flex-basis: 50%;
-      justify-content: center;
-      align-items: flex-start;
+    .contactDiv {
+      justify-content: space-between;
       flex-direction: column;
-      grid-row: 0.5rem;
-    }
-    .logoDiv {
-      .logo {
-        color: var(--blackColor);
-        font-weight: 600;
-        .icon {
-          font-size: 25px;
-          color: var(--PrimaryColor);
-          margin-right: 10px;
+      gap: 1rem;
+
+      .text {
+        small {
+          font-size: 13px;
+          font-weight: 400;
+          color: var(--whiteColor);
+        }
+
+        h2 {
+          color: var(--whiteColor);
+          font-size: 1.8rem;
+        }
+      }
+      .inputDiv {
+        width: 100%;
+        gap: 1rem;
+        flex-direction: column;
+        input {
+          width: 100%;
+          padding: 0.5rem 0.6rem;
+          border-radius: 3rem;
+          border: 1px solid var(--whiteColor);
+          outline: none;
+          background: transparent;
+          color: var(--whiteColor);
+
+          &::placeholder {
+            color: var(--whiteColor);
+            opacity: 0.5;
+          }
+        }
+        .btn {
+          width: 100%;
+          justify-content: center;
+          color: var(--whiteColor);
+          font-weight: 500;
+          gap: 0.5rem;
+
+          .icon {
+            font-size: 18px;
+          }
         }
       }
     }
-    .footerParagraph {
-      font-size: 13px;
-      color: var(--textColor);
-    }
-    .footerSocials {
-      column-gap: 0.5rem;
-      .icon {
-        color: var(--blackColor);
-        font-size: 20px;
+    .footerCard {
+      position: relative;
+      padding: 1rem 1rem 4rem;
+      gap: 2rem;
+      border-radius: 1rem;
+      background: var(--bodyColor);
+      width: 100%;
+      justify-content: center;
+      flex-direction: column;
+      align-items: flex-start;
+      overflow: hidden;
 
-        &:hover {
-          color: var(--PrimaryColor);
+      .footerIntro {
+        flex-basis: 50%;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        grid-row: 0.5rem;
+      }
+      .logoDiv {
+        .logo {
+          color: var(--blackColor);
+          font-weight: 600;
+          .icon {
+            font-size: 25px;
+            color: var(--PrimaryColor);
+            margin-right: 10px;
+          }
+        }
+      }
+      .footerParagraph {
+        font-size: 13px;
+        color: var(--textColor);
+      }
+      .footerSocials {
+        column-gap: 0.5rem;
+        .icon {
+          color: var(--blackColor);
+          font-size: 20px;
+
+          &:hover {
+            color: var(--PrimaryColor);
+          }
+        }
+      }
+    }
+    .footerLinks {
+      flex-basis: 50%;
+      width: 100%;
+      gap: 1rem;
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: space-between;
+
+      .linkGroup {
+        .groupTitle {
+          display: block;
+          font-weight: 600;
+          color: var(--blackColor);
+          margin-top: 0.5rem;
+        }
+        .footerList {
+          font-size: 15px;
+          color: var(--textColor);
+          transition: 0.3s ease-in-out;
+          .icon {
+            font-size: 15px;
+            color: var(--greyText);
+          }
+          &:hover {
+            color: var(--PrimaryColor);
+            transform: translateX(7px);
+
+            .icon {
+              color: var(--SecondaryColor);
+            }
+          }
+        }
+      }
+    }
+    .footerDiv {
+      flex-direction: column;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--SecondaryColor);
+      padding: 0.5rem 2rem;
+
+      small {
+        font-size: 10px;
+        color: var(--whiteColor);
+      }
+    }
+  }
+}
+//Media queries================================>
+@media screen and (min-width: 500px) {
+  .footer {
+    .secContent {
+      .footerCard {
+        .footerLinks {
+          grid-template-columns: repeat(3, 1fr);
+          padding-bottom: 1rem;
+        }
+        .footerDiv {
+          justify-content: space-around;
+          color: var(--whiteColor);
         }
       }
     }
   }
-  .footerLinks {
-    flex-basis: 50%;
-    width: 100%;
-    gap: 1rem;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: space-between;
+}
 
-    .linkGroup {
-      .groupTitle {
-        display: block;
-        font-weight: 600;
-        color: var(--blackColor);
-        margin-top: 0.5rem;
-      }
-      .footerList {
-        font-size: 15px;
-        color: var(--textColor);
-        transition: 0.3s ease-in-out;
-        .icon {
-          font-size: 15px;
-          color: var(--greyText);
-        }
-        &:hover {
-          color: var(--PrimaryColor);
-          transform: translateX(7px);
-
-          .icon {
-            color: var(--SecondaryColor);
+@media screen and (min-width: 660px) {
+  .footer {
+    .secContent {
+      .contactDiv {
+        flex-direction: row;
+        justify-content: space-between;
+        .inputDiv {
+          width: max-content;
+          flex-direction: row;
+          justify-content: center;
+          input {
+            width: 60%;
+          }
+          .btn {
+            width: max-content;
           }
         }
       }
     }
   }
-  .footerDiv {
-    flex-direction: column;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: var(--SecondaryColor);
-    padding: 0.5rem 2rem;
+}
 
-    small {
-      font-size: 10px;
-      color: var(--whiteColor);
+@media screen and (min-width: 840px) {
+  .footer {
+    padding: 5rem 0;
+    .secContent {
+      .footerCard {
+        flex-direction: row;
+        .footerLinks {
+          grid-template-columns: repeat(3, 1fr);
+          padding-bottom: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .footer {
+    .secContent {
+      .footerCard {
+        padding: 3rem 1rem;
+        .footerIntro {
+          .footerParagraph {
+            font-size: 15px;
+            color: var(--textColor);
+          }
+          .footerSocials {
+            column-gap: 0.5rem;
+            .icon {
+              color: var(--textColor);
+              font-size: 25px;
+              &:hover {
+                color: var(--PrimaryColor);
+              }
+            }
+          }
+        }
+        .footerLinks {
+          .linkGroup {
+            .footerList {
+              font-size: 16px;
+              padding: 5px 0;
+            }
+          }
+        }
+      }
     }
   }
 }
