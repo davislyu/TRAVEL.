@@ -12,7 +12,7 @@ import img9 from "../Assets/img9.jpg";
 import img10 from "../Assets/img10.jpg";
 import Aos from "aos";
 import "aos/dist/aos.css";
-
+import Home from "../Home/Home";
 //import icons
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { BsClipboardCheck } from "react-icons/bs";
@@ -34,7 +34,7 @@ const Data = [
     destTitle: "Paris",
     location: "France",
     grade: "CULTURAL",
-    fees: "$500",
+    fees: "$5000",
     description:
       "Known as the city of love, Paris is famous for its iconic Eiffel Tower and rich history.",
   },
@@ -44,7 +44,7 @@ const Data = [
     destTitle: "Tokyo",
     location: "Japan",
     grade: "ADVENTURE",
-    fees: "$600",
+    fees: "$4500",
     description:
       "Experience the blend of modern and tradition in Tokyo's bustling streets.",
   },
@@ -116,10 +116,14 @@ const Data = [
   },
 ];
 
-const Main = () => {
+const Main = ({ price }) => {
   useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);
+  const filteredData = Data.filter(
+    (item) => parseInt(item.fees.slice(1)) <= price
+  );
+
   return (
     <section className="main container section">
       <div className="secTitle">
@@ -128,7 +132,7 @@ const Main = () => {
         </h3>
       </div>
       <div className="secContent grid">
-        {Data.map(
+        {filteredData.map(
           ({ id, imgSrc, destTitle, location, grade, fees, description }) => {
             return (
               <div key={id} data-aos="fade-up" className="singleDestination">

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./app.css"
 import Navbar from './components/Navbar/Navbar.jsx'
 import Home from './components/Home/Home.jsx'
@@ -8,11 +8,12 @@ import Main from './components/Main/Main.jsx'
 
 
 const App = () => {
+    const [price, setPrice] = useState(1000)
     return (
         <>
             <Navbar />
-            <Home />
-            <Main />
+            <Home price={price} setPrice={setPrice} />
+            <Main price={price} />
             <Footer />
 
         </>

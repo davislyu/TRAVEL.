@@ -12,8 +12,7 @@ import { TbApps } from "react-icons/tb";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-const Home = () => {
-  const [price, setPrice] = useState(1000);
+const Home = ({ price, setPrice }) => {
   useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);
