@@ -32,17 +32,13 @@
     video {
       height: 100%;
       object-fit: cover;
+      border-radius: 20px 20px 0 0;
     }
 
     &::after {
       content: "";
       position: absolute;
-      background: rgba(
-        10,
-        84,
-        84,
-        0.307
-      ); /* I assume you wanted some kind of overlay, so I corrected the rgba values here */
+      background: none;
       top: 0;
       bottom: 0;
       right: 0;
@@ -117,7 +113,7 @@
       padding: 1rem 1rem 4rem;
       gap: 2rem;
       border-radius: 1rem;
-      background: var(--bodyColor);
+      background: rgba(var(--r, 255), var(--g, 255), var(--b, 255), 0.8);
       width: 100%;
       justify-content: center;
       flex-direction: column;
